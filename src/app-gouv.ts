@@ -725,7 +725,6 @@ class AppGouv {
             }
 
             const result = await apiService.createTest({
-                patient_id: (window as any).__selectedPatientId,
                 duration: testData?.totalTime || 0,
                 gaze_time: testData?.gazeTime || 0,
                 tracking_percentage: testData?.trackingPercentage || 0,

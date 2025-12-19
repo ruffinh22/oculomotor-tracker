@@ -318,7 +318,6 @@ class EyeTrackingApp {
             const observer = new MutationObserver(enforcePosition);
             observer.observe(document.body, {
                 attributes: true,
-                style: true,
                 subtree: true,
                 attributeFilter: ['style', 'class']
             });
@@ -673,7 +672,6 @@ class EyeTrackingApp {
                 console.log('Soumission du test au backend...');
                 // Soumet le test au backend
                 const result = await apiService.createTest({
-                    patient_id: (window as any).__selectedPatientId,
                     duration: testData.totalTime,
                     gaze_time: testData.gazeTime,
                     tracking_percentage: testData.trackingPercentage,

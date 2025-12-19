@@ -82,9 +82,6 @@ class EyeTrackingApp {
             this.eyeTracker = new EyeTracker();
             this.targetDetector = new TargetDetector(800, 600);
             
-            // Initialiser EyeTracker qui lance WebGazer
-            await this.eyeTracker.initialize();
-            
             // Fonction pour forcer le repositionnement
             const enforcePosition = () => {
                 const container = document.querySelector('.webgazer-container') as HTMLElement;
@@ -363,7 +360,6 @@ class EyeTrackingApp {
             if (testData) {
                 // Soumet le test au backend
                 const result = await apiService.createTest({
-                    patient_id: (window as any).__selectedPatientId,
                     duration: testData.totalTime,
                     gaze_time: testData.gazeTime,
                     tracking_percentage: testData.trackingPercentage,

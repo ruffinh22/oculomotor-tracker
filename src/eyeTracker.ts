@@ -275,7 +275,6 @@ export class EyeTracker {
         
         observer.observe(container, {
             attributes: true,
-            style: true,
             childList: true,
             subtree: true,
         });
