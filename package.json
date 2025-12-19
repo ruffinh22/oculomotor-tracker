@@ -7,12 +7,12 @@
   "scripts": {
     "start": "tsx src/server.ts",
     "dev": "tsx watch src/server.ts",
-    "build": "tsc && npm run build:css",
+    "build": "tsc",
     "build:watch": "tsc --watch",
-    "build:css": "postcss -i ./src/globals.css -o ./public/styles-tailwind.css",
-    "build:css:watch": "postcss -i ./src/globals.css -o ./public/styles-tailwind.css --watch",
+    "build:css": "echo 'CSS files already compiled'",
+    "build:css:watch": "echo 'CSS files already compiled'",
     "serve": "tsx src/server.ts",
-    "build:prod": "tsc --strict && npm run build:css",
+    "build:prod": "tsc --strict",
     "lint": "tsc --noEmit"
   },
   "dependencies": {
