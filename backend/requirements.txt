@@ -1,15 +1,39 @@
+# Core Django & REST Framework
 Django==4.2.8
 djangorestframework==3.14.0
+djangorestframework_simplejwt==5.5.1
 django-cors-headers==4.3.1
+
+# Database & ORM
+psycopg2-binary==2.9.11
+
+# Environment & Configuration
+python-decouple==3.8
+python-dotenv==1.2.1
 django-environ==0.12.0
-Pillow>=11.0.0
-numpy>=2.1.0
-scikit-learn>=1.4.0
-tensorflow>=2.17.0
-tink>=1.7.0
-cryptography>=41.0.0
-python-dotenv>=1.0.0
-psycopg2-binary>=2.9.0
-gunicorn>=21.0.0
-whitenoise>=6.6.0
-PyJWT>=2.8.0
+
+# Server & WSGI
+gunicorn==23.0.0
+whitenoise==6.11.0
+
+# PDF Generation
+reportlab==4.4.6
+
+# Image Processing
+pillow==12.0.0
+
+# Machine Learning (optional - can be removed if not used)
+numpy==2.3.5
+scikit-learn==1.8.0
+scipy==1.16.3
+tensorflow==2.20.0
+
+# Authentication & Security
+cryptography==46.0.3
+PyJWT==2.10.1
+
+# HTTP & Requests
+requests==2.32.5
+
+# Utilities
+pytz==2025.2
