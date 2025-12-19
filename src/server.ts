@@ -53,9 +53,9 @@ app.post('/api/test-results', (req: Request, res: Response) => {
     }
 });
 
-// Gestion des erreurs 404
+// Gestion des erreurs 404 - Fallback vers index.html pour SPA
 app.use((_req: Request, res: Response) => {
-    res.status(404).json({ error: 'Route non trouvée' });
+    res.sendFile(path.join(__dirname, '..', 'public', 'index-tailwind.html'));
 });
 
 // Démarrage du serveur
