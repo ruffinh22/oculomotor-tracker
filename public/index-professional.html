@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Système de Suivi Oculaire Clinique</title>
+    <link rel="stylesheet" href="styles-professional.css" />
+    <!-- WebGazer.js pour le suivi oculaire -->
+    <script src="https://webgazer.cs.brown.edu/webgazer.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- L'app sera rendue ici -->
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        // Compile TypeScript à la volée (en dev)
+        // En production, utilise une build étape avec tsx
+        import('./app-professional.ts').catch(err => {
+            console.error('Erreur lors du chargement de l\'application:', err);
+            document.getElementById('app').innerHTML = `
+                <div style="padding: 2rem; text-align: center; color: red;">
+                    <h1>Erreur de chargement</h1>
+                    <p>Impossible de charger l'application.</p>
+                    <p>${err.message}</p>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>

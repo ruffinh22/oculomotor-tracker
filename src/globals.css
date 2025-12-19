@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+/* Animations personnalisées */
+@layer utilities {
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-spin {
+    animation: spin 1s linear infinite;
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.3s ease-out;
+  }
+}
+
+/* Styles personnalisés */
+@layer components {
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-gray-300 hover:bg-gray-400 text-gray-900 font-bold rounded-lg transition-colors;
+  }
+
+  .btn-danger {
+    @apply px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition-colors;
+  }
+
+  .btn-success {
+    @apply px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg transition-colors;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500;
+  }
+
+  .metric-card {
+    @apply rounded-lg p-4 border-l-4 font-bold;
+  }
+
+  .metric-success {
+    @apply metric-card bg-green-50 border-l-green-500 text-green-900;
+  }
+
+  .metric-warning {
+    @apply metric-card bg-yellow-50 border-l-yellow-500 text-yellow-900;
+  }
+
+  .metric-danger {
+    @apply metric-card bg-red-50 border-l-red-500 text-red-900;
+  }
+
+  .metric-info {
+    @apply metric-card bg-blue-50 border-l-blue-500 text-blue-900;
+  }
+}

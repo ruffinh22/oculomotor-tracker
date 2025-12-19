@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Système de suivi oculaire clinique pour l'orthoptie" />
+    <meta name="theme-color" content="#000091" />
+    <title>Suivi Oculaire Clinique - Service Public</title>
+    
+    <!-- Favicon gouvernemental -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23000091' width='100' height='100'/><text x='50' y='70' font-size='60' font-weight='bold' fill='white' text-anchor='middle'>👁</text></svg>" />
+    
+    <!-- Styles DSFR -->
+    <link rel="stylesheet" href="styles-dsfr.css" />
+    
+    <!-- WebGazer.js pour le suivi oculaire -->
+    <script src="https://webgazer.cs.brown.edu/webgazer.js"></script>
+</head>
+<body>
+    <!-- HEADER GOUVERNEMENTAL -->
+    <header class="dsfr-header">
+        <!-- Bandeau noir gouvernemental -->
+        <div class="dsfr-header-top">
+            <a href="#" title="Accueil">Gouvernement.fr</a>
+            <a href="#" title="Accessibilité">Accessibilité</a>
+            <a href="#" title="Aide">Aide</a>
+            <a href="#" title="Contactez-nous">Contactez-nous</a>
+        </div>
+
+        <!-- Navigation principale -->
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <div class="navbar-logo">👁️</div>
+                <div>
+                    <h1>Suivi Oculaire Clinique</h1>
+                    <p class="navbar-subtitle">Service Public de Santé</p>
+                </div>
+            </div>
+            <div class="navbar-menu" id="navbarMenu">
+                <!-- Dynamique -->
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main id="app" role="main">
+        <!-- L'app sera rendue ici -->
+    </main>
+
+    <!-- WEBCAM CONTAINER POUR WEBGAZER -->
+    <div id="webgazerVideoContainer"></div>
+
+    <!-- FOOTER GOUVERNEMENTAL -->
+    <footer class="dsfr-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>À propos</h3>
+                <a href="#">Présentation du service</a>
+                <a href="#">Guide utilisateur</a>
+                <a href="#">FAQ</a>
+                <a href="#">Nous contacter</a>
+            </div>
+            <div class="footer-section">
+                <h3>Légal</h3>
+                <a href="#">Mentions légales</a>
+                <a href="#">Conditions d'utilisation</a>
+                <a href="#">Politique de confidentialité</a>
+                <a href="#">Gestion des cookies</a>
+            </div>
+            <div class="footer-section">
+                <h3>Accessibilité</h3>
+                <a href="#">Déclaration d'accessibilité</a>
+                <a href="#">Signaler un problème</a>
+                <a href="#">Améliorer l'application</a>
+            </div>
+            <div class="footer-section">
+                <h3>Ressources</h3>
+                <a href="#">Documentation</a>
+                <a href="#">Télécharger les résultats</a>
+                <a href="#">API</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Système de Santé Public - Tous droits réservés</p>
+            <p>Service fourni par le Ministère de la Santé</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module">
+        // Import de l'application
+        import('./app-professional.ts').catch(err => {
+            console.error('Erreur lors du chargement:', err);
+            document.getElementById('app').innerHTML = `
+                <div class="container" style="padding: 3rem 0;">
+                    <h1 style="color: #ce0c13;">Erreur de chargement</h1>
+                    <p>Une erreur est survenue lors du chargement de l'application.</p>
+                    <p style="color: #666; font-size: 0.9rem;">${err.message}</p>
+                    <button class="btn btn-primary" onclick="location.reload()">Recharger la page</button>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
